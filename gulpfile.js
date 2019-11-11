@@ -1,9 +1,12 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');/*добавляє префікси для нормальної роботи в інших браузерах*/
+const concat = require('gulp-concat');/*деколи недобре, бо потрібна послідовність js, в якій вони йдуть. Для цього створюється json і налаштовуєш послідовність dependencies*/
 const cssnano = require('gulp-cssnano');/*для мініфікації*/
 const imagemin = require('gulp-imagemin');
 const rename = require("gulp-rename");
+// const uglify = require('gulp-uglify');/*мініфікувати*/
+const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 const browsersync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
@@ -13,12 +16,24 @@ const paths = {
         src: 'app/style/**/*.scss',
         dest: 'build/css'
     },
+    scripts: {
+        src: 'app/scripts/*.js',
+        dest: 'build/scripts'
+    },
+    jsPlugins:{
+        src: 'app/js/plugins/*.js',
+        dest: 'build/scripts'
+    },
     html: {
         src: 'app/**/*.html',
         dest: 'build/'
     },
+    fonts: {
+        src: 'app/fonts/*.*',
+        dest: 'build/fonts'
+    },
     images: {
-        src: 'app/images/*.*',
+        src: 'app/images/**/*.*',
         dest: 'build/images'
     }
 }
@@ -32,6 +47,11 @@ function browserSync(done){
     });
     done();
 }
+
+// function browserSyncReload(done) {
+//     browsersync.reload();
+//     done();
+// }
 
 function styles(){
     return gulp.src(paths.styles.src)
@@ -49,12 +69,24 @@ function styles(){
         .pipe(browsersync.stream())
 }
 
+function scripts() {
+    return gulp.src(paths.scripts.src)
+        .pipe(concat('main.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(paths.scripts.dest))
+        .pipe(browsersync.stream())
+}
+
 function html(){
     return gulp.src(paths.html.src)
         .pipe(gulp.dest(paths.html.dest))
         .pipe(browsersync.stream())
 }
-
+function fonts(){
+    return gulp.src(paths.fonts.src)
+        .pipe(gulp.dest(paths.fonts.dest))
+        .pipe(browsersync.stream())
+}
 function images() {
     return gulp.src(paths.images.src)
         .pipe(imagemin())
@@ -64,7 +96,9 @@ function images() {
 
 function watch() {
     gulp.watch(paths.styles.src, styles);
+    gulp.watch(paths.scripts.src, scripts);
     gulp.watch(paths.html.src, html);
+    gulp.watch(paths.fonts.src, fonts);
     gulp.watch(paths.images.src, images);
     gulp.watch('./app/*.html').on('change',browsersync.reload);
 }
@@ -72,5 +106,9 @@ function watch() {
 function clean(){
     return del('build/*')
 }
+// gulp.task('watch', watch);
+// gulp.task('scripts', scripts);
+// gulp.task('clean', clean);
+// gulp.task('build', gulp.series(clean, gulp.parallel(styles, scripts, html, images)));
 
- gulp.task('default', gulp.parallel(watch,browserSync,gulp.series(clean, gulp.parallel(styles, html, images))));
+gulp.task('default', gulp.parallel(watch,browserSync,gulp.series(clean, gulp.parallel(styles, scripts, html,fonts, images))));

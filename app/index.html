@@ -8,99 +8,99 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-<div class="wrapper">
-    <header class="header">
-        <div class="headerContainer container">
-            <div class="header__logo"><img src="images/Logo.png" alt="Logo is here"></div>
+<header class="header">
+    <div class="wrapper">
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <a class="header__logo-link" href="#!"><img src="images/Logo.png" alt="Logo is here"></a>
+            </div>
+            <input type="checkbox" id="menu-checkbox" class="header__checkbox">
+            <label for="menu-checkbox" class="header__menu-button"
+                   data-open="MENU" data-close="CLOSE" onclick></label>
             <nav class="header__menu">
-                <ul class="header__menu__list">
-                    <li class="header__menu__list__link"><a href="#" class="link_black">О компании</a></li>
-                    <li class="header__menu__list__link"><a href="#" class="link_black">Услуги</a></li>
-                    <li class="header__menu__list__link"><a href="#" class="link_black">Отзывы</a></li>
-                    <li class="header__menu__list__link"><a href="#" class="link_black">Контакты</a></li>
+                <ul class="header__list">
+                    <li class="header__item">
+                        <a href="#" class="header__link">О компании</a></li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Услуги</a></li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Отзывы</a></li>
+                    <li class="header__item">
+                        <a href="#" class="header__link">Контакты</a></li>
                 </ul>
             </nav>
-            <div class="header__content">
-                <div class="header__content__photoWrapper">
-                    <img src="images/photoContent.png" alt="Фото контент" class="header__content__photo">
+        </div>
+    </div>
+</header>
+<main class="main">
+    <section class="banner">
+        <div class="wrapper">
+            <div class="banner__wrapper">
+                <div class="banner__photoWrapper">
+                    <img src="images/photoContent.png" alt="mobile" class="banner__photo">
                 </div>
-                <div class="header__content__main">
-                    <h3 class="header__content__title">Типы контента, которые вы можете публиковать в своем
+                <div class="banner__text">
+                    <h1 class="banner__title">Типы контента, которые вы можете публиковать в своем
                         интернет-магазине.
-                    </h3>
-                    <p class="header__content__description">Грамотная контентная стратегия для интернет-магазина
+                    </h1>
+                    <p class="banner__description">Грамотная контентная стратегия для интернет-магазина
                         позволяет значительно
                         увеличить объемы поискового трафика на сайт, за который предпринимателю нет необходимости
                         платить.
                         Это повышает рентабельность бизнеса, ускоряет его развитие и дает преимущество...
                     </p>
-                    <button class="detailsBtn">Подробнее</button>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="efficiency">
-        <div class="efficiencyContainer container">
-            <div class="efficiency__main">
-                <h4 class="efficiency__main__title">Эффективность контентной стратегии</h4>
-                <p class="efficiency__main__description">Грамотная контентная стратегия для
-                    интернет-магазина позволяет значительно увеличить объемы поискового трафика на сайт,
-                    за который предпринимателю нет необходимости платить. Это повышает рентабельность бизнеса,
-                    ускоряет его развитие и дает преимущество по сравнению с конкурентами.Поэтому выстраивать
-                    эффективную стратегию контент-маркетинга в современных реалиях просто необходимо.</p>
-            </div>
-            <div class="efficiency__advantages">
-                <div class="efficiency__advantages__block">
-                    <img src="images/1.png" alt="visitors image" class="efficiency__advantages__block__img">
-                    <p class="efficiency__advantages__block__description">Улучшение посещяемости</p>
-                </div>
-                <div class="efficiency__advantages__block">
-                    <img src="images/2.png" alt="basket image" class="efficiency__advantages__block__img">
-                    <p class="efficiency__advantages__block__description">Увеличение количества продаж</p>
-                </div>
-                <div class="efficiency__advantages__block">
-                    <img src="images/3.png" alt="calculator image" class="efficiency__advantages__block__img">
-                    <p class="efficiency__advantages__block__description">Рост прибыли</p>
-                </div>
-                <div class="efficiency__advantages__block">
-                    <img src="images/4.png" alt="briefcase image" class="efficiency__advantages__block__img">
-                    <p class="efficiency__advantages__block__description">Стабильность бизнеса</p>
+                    <button class="banner__more">Подробнее</button>
                 </div>
             </div>
         </div>
     </section>
     <section class="content">
-        <div class="contentContainer container">
-            <div class="content__item">
-                <h4 class="content__item__title">Информация о товаре</h4>
-                <p class="content__item__text">Это текст, который доступен посетителю
-                    на странице товара. Это может быть как качественно подготовленное
-                    описание, так и дополнительная информация: интересные факты,
-                    видеообзор, а также преимущества данного товара по сравнению с
-                    аналогами от конкурентов. Согласитесь, это будет гораздо интереснее,
-                    чем банальное описание технических характеристик.
-                </p>
-            </div>
-            <div class="content__item">
-                <h4 class="content__item__title">Маркетинговый контент</h4>
-                <p class="content__item__text">Речь идет о заметках и публикациях с информацией
-                    о скидках, распродажах, конкурсах и прочих акционных предложениях. Такой
-                    текст тоже необходимо тщательно прорабатывать, так как от стиля подачи
-                    во многом зависит и успех подобной акции. В современных реалиях вызвать
-                    интерес со стороны потенциального клиента не так уж и просто.</p>
-            </div>
-            <div class="content__item">
-                <h4 class="content__item__title">Обзорные статьи</h4>
-                <p class="content__item__text">Они могут быть самыми разными – от разъяснения
-                    особенностей той или иной технологии и до демонстрации вариантов применения
-                    гаджета или другого подобного устройства. Важно раскрывать тему и давать
-                    пользователю исчерпывающий ответ на интересующий его вопрос. И да, не забывайте
-                    отвечать на комментарии – коммуникация должна быть двухсторонней.
-
-                </p>
+        <div class="wrapper">
+            <div class="content__wrapper">
+                <div class="content__card ">
+                    <h4 class="content__card-title">Эффективность контентной стратегии</h4>
+                    <p class="content__card-description">Грамотная контентная стратегия для
+                        интернет-магазина позволяет значительно увеличить объемы поискового трафика на сайт,
+                        за который предпринимателю нет необходимости платить. Это повышает рентабельность бизнеса,
+                        ускоряет его развитие и дает преимущество по сравнению с конкурентами.Поэтому выстраивать
+                        эффективную стратегию контент-маркетинга в современных реалиях просто необходимо.</p>
+                    <ul class="content__card-list">
+                        <li class="content__card-item">Улучшение посещяемости</li>
+                        <li class="content__card-item">Увеличение количества продаж</li>
+                        <li class="content__card-item">Рост прибыли</li>
+                        <li class="content__card-item">Стабильность бизнеса</li>
+                    </ul>
+                </div>
+                <div class="content__card">
+                    <h4 class="content__card-title">Информация о товаре</h4>
+                    <p class="content__card-description">Это текст, который доступен посетителю
+                        на странице товара. Это может быть как качественно подготовленное
+                        описание, так и дополнительная информация: интересные факты,
+                        видеообзор, а также преимущества данного товара по сравнению с
+                        аналогами от конкурентов. Согласитесь, это будет гораздо интереснее,
+                        чем банальное описание технических характеристик.
+                    </p>
+                </div>
+                <div class="content__card">
+                    <h4 class="content__card-title">Маркетинговый контент</h4>
+                    <p class="content__card-description">Речь идет о заметках и публикациях с информацией
+                        о скидках, распродажах, конкурсах и прочих акционных предложениях. Такой
+                        текст тоже необходимо тщательно прорабатывать, так как от стиля подачи
+                        во многом зависит и успех подобной акции. В современных реалиях вызвать
+                        интерес со стороны потенциального клиента не так уж и просто.</p>
+                </div>
+                <div class="content__card">
+                    <h4 class="content__card-title">Обзорные статьи</h4>
+                    <p class="content__card-description">Они могут быть самыми разными – от разъяснения
+                        особенностей той или иной технологии и до демонстрации вариантов применения
+                        гаджета или другого подобного устройства. Важно раскрывать тему и давать
+                        пользователю исчерпывающий ответ на интересующий его вопрос. И да, не забывайте
+                        отвечать на комментарии – коммуникация должна быть двухсторонней.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
-</div>
+</main>
 </body>
 </html>

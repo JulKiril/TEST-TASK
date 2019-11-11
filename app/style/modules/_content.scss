@@ -1,0 +1,88 @@
+.content {
+  &__card {
+    margin-bottom: 19px;
+
+    &:nth-child(2) {
+      margin-bottom: 18px;
+    }
+
+    &:nth-child(3) {
+      margin-bottom: 17px;
+    }
+  }
+
+  &__card-title {
+    font-size: 18px;
+    @include font($baseFF, bold, normal);
+    line-height: 1.056;
+    margin-bottom: 6px;
+  }
+
+  &__card-description {
+    font-size: 14px;
+    font-family: $aditFF;
+    color: $textColor;
+    line-height: 1.429;
+    margin-bottom: 7px;
+  }
+
+  &__card-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 7px;
+
+  }
+
+  &__card-item {
+    @include font($aditFF, normal, italic);
+    font-size: 14px;
+    line-height: 1.286;
+    padding: 25px 64px 25px 58px;
+    background: url("../images/1.png") no-repeat left center;
+    max-width: 210px;
+
+    &:nth-child(2) {
+      background: url("../images/2.png") no-repeat left center;
+      max-width: 259px;
+      padding-right: 78px;
+      padding-left: 61px;
+    }
+
+    &:nth-child(3) {
+      background: url("../images/3.png") no-repeat left center;
+      max-width: 182px;
+      padding-left: 52px;
+      padding-right: 45px;
+    }
+
+    &:nth-child(4) {
+      background: url("../images/4.png") no-repeat left center;
+      max-width: 171px;
+      padding-left: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .content {
+    &__card-list {
+      justify-content: space-around;
+
+      .content__card-item {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .content {
+    &__card-list {
+      .content__card-item {
+        font-size: 12px;
+        background-size: 35px;
+      }
+    }
+  }
+}
