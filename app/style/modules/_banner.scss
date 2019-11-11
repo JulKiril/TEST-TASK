@@ -57,15 +57,24 @@
   .banner {
     &__wrapper {
       padding-left: 0;
+      padding-top: 0;
     }
 
     &__photoWrapper {
-      margin: 0 auto;
+      position: relative;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    &__photoItem{
+      padding-top: 55.19%;
     }
 
     &__photo {
-      width: 482px;
-      height: 266px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     &__text {
@@ -89,33 +98,11 @@
 
 @media screen and (max-width: 595px) {
   .banner {
-
-    &__photo {
-      width: 380px;
-      height: 230px;
-    }
-
     &__title {
       font-size: 18px;
     }
   }
 }
 
-@media screen and (max-width: 485px) {
-  .banner {
 
-    &__photo {
-      width: 280px;
-      height: 180px;
-    }
-  }
-}
-@media screen and (max-width: 370px){
-  .banner {
 
-    &__photo {
-      width: 235px;
-      height: 150px;
-    }
-  }
-}
