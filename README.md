@@ -12,4 +12,3 @@ Run the npm install command in your project directory to install node modules.
 
 Run the gulp command in your project directory to build the project.
 
-The built version you will find by the link http://3.120.138.169/HomeWork1/build/
